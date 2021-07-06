@@ -35,12 +35,91 @@ Git は変更履歴を記録します。
 ### ファイルの状態を巻き戻せる
 
 その通りです。
+
 ```bash
-git checkout 
+git checkout
 ```
+
 コマンドを使います。
 
 ### ブランチが作れる
 
-## 実践Git
+作業の枝分かれです。
 
+ブランチを切って行った作業は他人に一切影響を与えないです。
+これがとても素晴しい。
+
+## 実践 Git
+
+### Git と GitHub の違い
+
+GitHub は Git を活用したサービスです。
+
+### git のはじめかた
+
+#### ユーザ登録
+
+git は変更履歴にユーザ名とメールアドレスを紐づけます。
+
+そのときに使うアカウント情報です。
+
+```
+git config --global user.name "外部に公開される名前"
+git config --global user.email "外部に公開されるメールアドレス"
+```
+
+[参考文献](https://docs.github.com/ja/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
+
+### Git add
+
+#### git add とは
+
+`git add` とはファイルの変更を Git に教えてあげるコマンドです。
+
+#### git add のつかいかた
+
+```
+git add <変更のあったファイル名>
+```
+
+### git commit
+
+#### git commit とは
+
+`git commit`とは`git add`で教えてあげたファイルの変更を保存することが出来るコマンドです。
+
+#### git commit のつかいかた
+
+```
+git commit
+```
+
+これだけです。
+
+### git push
+
+#### git push とは
+
+`git push`で`git commit`で保存した履歴をリモートに送れます。
+
+#### git push のつかいかた
+
+```
+git push
+```
+
+これだけ
+
+### git pull
+
+#### git pull とは
+
+`git pull`で Github などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
+
+#### git pull のつかいかた
+
+```
+git pull
+```
+
+これだけです。
