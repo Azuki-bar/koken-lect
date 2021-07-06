@@ -123,3 +123,12 @@ git pull
 ```
 
 これだけです。
+
+### git clone
+#### git cloneとは
+リモートにあるgit自体をコピーするコマンド
+
+#### git clone の使い方
+```
+git clone https://github.com/<USERNAME>/koken-lect-20210706.git
+```
