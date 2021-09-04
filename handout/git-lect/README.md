@@ -234,7 +234,7 @@ git push
 
 <details>
 <summary>厳密には</summary>
-厳密に言うと fork は内部では`MY_USER_NAME/REPOGITORY_NAME/master/`のようなブランチを作成しており、
+厳密に言うと fork は内部では<code>MY_USER_NAME/REPOGITORY_NAME/master/</code>のようなブランチを作成しており、
 プルリクエストを発行し承認されることにより、このブランチでの変更が大元のmasterに反映されることとなっています。
 </details>
 
