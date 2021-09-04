@@ -9,6 +9,12 @@
             "no-doubled-joshi": {
                 "strict": false,
                 "allow": ["か"]
+            },
+            "no-exclamation-question-mark": {
+                "allowHalfWidthExclamation": false,
+                "allowFullWidthExclamation": true,
+                "allowHalfWidthQuestion": false,
+                "allowFullWidthQuestion": true
             }
         }
     }
