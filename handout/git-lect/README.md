@@ -1,5 +1,12 @@
 # 工研雑講習 Git 編
 
+## 事前準備編
+
+### GitHub のアカウント作成
+
+この講習では GitHub を使用するので GitHub のアカウントを作成してください。
+淵野アタリさんが講習してくれたらしい…………
+
 ## Git とは
 
 > Git（ギット）は、プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムである。
@@ -47,7 +54,7 @@ git checkout
 作業の枝分かれです。
 
 ブランチを切って行った作業は他人に一切影響を与えないです。
-これがとても素晴しい。
+これがとても素晴らしい。
 
 ## 実践 Git
 
@@ -63,7 +70,7 @@ git は変更履歴にユーザ名とメールアドレスを紐づけます。
 
 そのときに使うアカウント情報です。
 
-```
+```bash
 git config --global user.name "外部に公開される名前"
 git config --global user.email "外部に公開されるメールアドレス"
 ```
@@ -114,7 +121,7 @@ git push
 
 #### git pull とは
 
-`git pull`で Github などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
+`git pull`で GitHub などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
 
 #### git pull のつかいかた
 
@@ -125,10 +132,76 @@ git pull
 これだけです。
 
 ### git clone
-#### git cloneとは
-リモートにあるgit自体をコピーするコマンド
+
+#### git clone とは
+
+リモートにある git 自体をコピーするコマンド
 
 #### git clone の使い方
+
 ```
 git clone https://github.com/<USERNAME>/koken-lect-20210706.git
 ```
+
+## 実際に触る
+
+### GitHub のアカウントを作成する
+
+```bash
+# sol にログインする
+ssh X9999999@sol.edu.cc.uec.ac.jp
+
+# git が使えるかを確認する
+git --version
+# git version 2.27.0
+
+# もし使えないときは
+echo 'module load git/2.27.0' >> ~/.tcshrc
+exit
+
+mkdir git_lect
+cd git_lect
+
+# Git を使う初期設定をする
+git init
+
+# 適当なファイルを作成して中身を作る
+nano FILE_NAME
+
+# ファイルの中身を確認する
+cat FILE_NAME
+
+# 作成したファイルをGitに追加する
+git add FILE_NAME
+
+# ファイルの変更履歴をGitに保存する
+git commit
+# エディタが開く
+# 1行目に変更の簡単な説明を書く（コミットメッセージと呼ばれています）
+# 保存する
+
+# git の保存履歴を確認する。
+git log 
+# commit ID と Author Date コミットメッセージが表示される
+
+# commit 575f5c21d2e67d367074acbc5937181f599b23a9 (HEAD -> master)
+# Author: Azuki-bar <42642269+Azuki-bar@users.noreply.github.com>
+# Date:   Sat Sep 4 23:33:04 2021 +0900
+# 
+#     こみっとめっせーじ
+
+# 編集する
+git add FILE_NAME
+git commit 
+
+git add FILE_NAME
+git commit 
+
+git add FILE_NAME
+git commit 
+
+# 繰り返す
+
+
+```
+
