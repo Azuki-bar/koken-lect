@@ -1,5 +1,12 @@
 # 工研雑講習 Git 編
 
+## 事前準備編
+
+### GitHub のアカウント作成
+
+この講習では GitHub を使用するので GitHub のアカウントを作成してください。
+淵野アタリさんが講習してくれたらしい…………
+
 ## Git とは
 
 > Git（ギット）は、プログラムのソースコードなどの変更履歴を記録・追跡するための分散型バージョン管理システムである。
@@ -47,7 +54,7 @@ git checkout
 作業の枝分かれです。
 
 ブランチを切って行った作業は他人に一切影響を与えないです。
-これがとても素晴しい。
+これがとても素晴らしい。
 
 ## 実践 Git
 
@@ -63,7 +70,7 @@ git は変更履歴にユーザ名とメールアドレスを紐づけます。
 
 そのときに使うアカウント情報です。
 
-```
+```bash
 git config --global user.name "外部に公開される名前"
 git config --global user.email "外部に公開されるメールアドレス"
 ```
@@ -114,7 +121,7 @@ git push
 
 #### git pull とは
 
-`git pull`で Github などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
+`git pull`で GitHub などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
 
 #### git pull のつかいかた
 
@@ -125,10 +132,152 @@ git pull
 これだけです。
 
 ### git clone
-#### git cloneとは
-リモートにあるgit自体をコピーするコマンド
+
+#### git clone とは
+
+リモートにある git 自体をコピーするコマンド
 
 #### git clone の使い方
+
 ```
-git clone https://github.com/<USERNAME>/koken-lect-20210706.git
+git clone https://github.com/<USER_NAME>/koken-lect-20210706.git
 ```
+
+## 実際に触る
+
+### GitHub のアカウントを作成する
+
+```bash
+# sol にログインする
+ssh X9999999@sol.edu.cc.uec.ac.jp
+
+# git が使えるかを確認する
+git --version
+# git version 2.27.0
+
+# もし使えないときは
+echo 'module load git/2.27.0' >> ~/.tcshrc
+exit
+
+mkdir git_lect
+cd git_lect
+
+```
+
+### `koken-lect-20210706`をフォークする。
+
+フォークとは他人の Git リポジトリ（Git で変更履歴が保存されているディレクトリ）をコピーすることです。
+GitHub 特有の作業です。
+
+[ここから飛ぶ](https://github.com/Azuki-bar/koken-lect-20210706)
+
+#### Git/ GitHub 講習の受講が初めての人
+
+![GitHub-fork](./src/git_fork.png)
+
+`https://github.com/<USER_NAME>/koken-lect-20210706`が存在することを確認する。
+
+#### すでに fork したことがある人
+
+下画像の緑色のボタンを押す。
+![GitHub-forked](./src/fork-merged.png)
+
+### 手元に最新のコードを取り寄せる。
+
+#### Git/ GitHub 講習の受講が初めての人
+
+```bash
+git clone https://github.com/<USER_NAME>/koken-lect-20210706
+cd koken-lect-20210706
+```
+
+#### すでに fork したことがある人
+
+```bash
+cd /path/to/koken-lect-20210706
+git pull
+```
+
+### Git のありがたみを知ろう
+
+`code`ディレクトリに移動し、中身を見る。
+
+```bash
+cd code
+nano hello.rb
+```
+
+`hello.rb`の内部にある以下のコードを削除する。
+
+```ruby
+def hello()
+  puts("Hello world!")
+end
+
+hello()
+```
+
+```bash
+# hello.rb の変更を保存することを git に伝える
+git add hello.rb
+
+# 変更を保存する。
+# ファイルの変更履歴をGitに保存する
+git commit
+# エディタが開く
+# 1行目以降に変更の簡単な説明を書く（コミットメッセージと呼ばれています）
+# もとからある部分は触らない
+```
+
+```bash
+# git の保存履歴を確認する。
+# commit ID と Author Date コミットメッセージが表示される
+git log
+
+#######
+# 例
+# commit 671e6b152c8ae0891e0c1591e997d86b0b8ce822 (HEAD -> master)
+# Author: Azuki-bar <42642269+Azuki-bar@users.noreply.github.com>
+# Date:   Sun Sep 5 01:15:54 2021 +0900
+#
+#     hello を削除しました。
+#
+# commit 92f1384a980748f1f4e47a60ab45ffbb67b0c7f4 (origin/master, origin/HEAD)
+# Author: Azuki-bar <42642269+Azuki-bar@users.noreply.github.com>
+# Date:   Sun Sep 5 00:45:02 2021 +0900
+#
+#     create other method
+```
+
+**間違えて**`hello`メソッドを削除してしまったので復旧させましょう。
+
+```bash
+git revert 671e6b152c8ae0891e0c1591e997d86b0b8ce822
+# git revert は commit IDの変更を打ち消すコミットを保存する。
+git revert 671e6b
+# commit ID は先頭6桁くらいで問題ない
+```
+
+```bash
+nano hello.rb
+```
+
+`hello`メソッドが復活していることを確認する。
+
+### 手元の変更をみんなに知らせる
+
+このようなタイトルを付けましたが、みんなに直接知らせることは出来ません。
+あくまで全員が知ることの出来る環境にコードを置くだけです。
+
+さて変更を他の人も見ることが出来るリモートリポジトリにアップロードしましょう。
+
+ここでいうリモートリポジトリは GitHub 上にフォークした`<USER_NAME>/koken-lect-20210706`を指します。
+
+```bash
+git push
+```
+
+ブラウザで`https://github.com/<USER_NAME>/koken-lect-20210706`を確認しましょう。
+変更が適用されていることが確認できれば OK です！
+
+ここまでが git を使う上でまず知っておきたい内容です！
