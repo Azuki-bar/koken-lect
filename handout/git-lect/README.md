@@ -77,72 +77,6 @@ git config --global user.email "外部に公開されるメールアドレス"
 
 [参考文献](https://docs.github.com/ja/github/setting-up-and-managing-your-github-user-account/managing-email-preferences/setting-your-commit-email-address)
 
-### Git add
-
-#### git add とは
-
-`git add` とはファイルの変更を Git に教えてあげるコマンドです。
-
-#### git add のつかいかた
-
-```
-git add <変更のあったファイル名>
-```
-
-### git commit
-
-#### git commit とは
-
-`git commit`とは`git add`で教えてあげたファイルの変更を保存することが出来るコマンドです。
-
-#### git commit のつかいかた
-
-```
-git commit
-```
-
-これだけです。
-
-### git push
-
-#### git push とは
-
-`git push`で`git commit`で保存した履歴をリモートに送れます。
-
-#### git push のつかいかた
-
-```
-git push
-```
-
-これだけ
-
-### git pull
-
-#### git pull とは
-
-`git pull`で GitHub などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
-
-#### git pull のつかいかた
-
-```
-git pull
-```
-
-これだけです。
-
-### git clone
-
-#### git clone とは
-
-リモートにある git 自体をコピーするコマンド
-
-#### git clone の使い方
-
-```
-git clone https://github.com/<USER_NAME>/koken-lect-20210706.git
-```
-
 ## 実際に触る
 
 ### GitHub のアカウントを作成する
@@ -280,4 +214,113 @@ git push
 ブラウザで`https://github.com/<USER_NAME>/koken-lect-20210706`を確認しましょう。
 変更が適用されていることが確認できれば OK です！
 
+また、大元のディレクトリ（[Azuki-bar/koken-lect-20210706](https://github.com/Azuki-bar/koken-lect-20210706)）が変更されていないことも合わせて確認しましょう！
+
+他人に影響を与えるのはそのような命令を明示的に書いたときだけ！！！！うれしい！！！！
+
 ここまでが git を使う上でまず知っておきたい内容です！
+
+### プルリクエストを出してみよう
+
+自分が行なった変更で大元も変更したくなってきませんか？
+
+その時に使用するのがプルリクエストです。
+これは GitHub が提供している機能で、ここからの操作はブラウザを用いて行います。
+
+![open PullRequest](./src/submit-PR.png)
+![open PullRequest](./src/submit-PR-2.png)
+
+この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
+
+<details>
+<summary>厳密には</summary>
+厳密に言うと fork は内部では`MY_USER_NAME/REPOGITORY_NAME/master/`のようなブランチを作成しており、
+プルリクエストを発行し承認されることにより、このブランチでの変更が大元のmasterに反映されることとなっています。
+</details>
+
+### ブランチの説明
+
+ブランチの説明したいけど難しいね。
+
+ここで復習ですが、Fork した先の変更は Fork 元には影響を与えませんでした。
+
+Fork はブランチの仕組みを活用したものです。
+
+このようにして、変更を別の場所で行ない、
+最後にレビュー（Review; Revue では無い）を受けることにより master という一番大切なところに変更が反映されるという
+開発フローが最近主流になっていると言われています。
+
+```bash
+# ブランチを切るコマンド
+git switch -c BRANCH_NAME
+# 以降の変更は BRANCH_NAME上に保存される。
+
+```
+
+## <付録> Git コマンド集
+
+### Git add
+
+#### git add とは
+
+`git add` とはファイルの変更を Git に教えてあげるコマンドです。
+
+#### git add のつかいかた
+
+```
+git add <変更のあったファイル名>
+```
+
+### git commit
+
+#### git commit とは
+
+`git commit`とは`git add`で教えてあげたファイルの変更を保存することが出来るコマンドです。
+
+#### git commit のつかいかた
+
+```
+git commit
+```
+
+これだけです。
+
+### git push
+
+#### git push とは
+
+`git push`で`git commit`で保存した履歴をリモートに送れます。
+
+#### git push のつかいかた
+
+```
+git push
+```
+
+これだけ
+
+### git pull
+
+#### git pull とは
+
+`git pull`で GitHub などのリモート変更をダウンロードしてあげるコマンドです。（いろいろ省略した結果）
+
+#### git pull のつかいかた
+
+```
+git pull
+```
+
+これだけです。
+
+### git clone
+
+#### git clone とは
+
+リモートにある git 自体をコピーするコマンド
+
+#### git clone の使い方
+
+```
+git clone https://github.com/<USER_NAME>/koken-lect-20210706.git
+```
