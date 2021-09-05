@@ -215,7 +215,8 @@ git log
 
 ```bash
 git revert 671e6b152c8ae0891e0c1591e997d86b0b8ce822
-# git revert は commit IDの変更を打ち消すコミットを保存する。
+# git revert は commit ID の変更を打ち消すコミットを保存する。
+# 下のコマンドは上のコマンドと同じ
 git revert 671e6b
 # commit ID は先頭6桁くらいで問題ない
 ```
