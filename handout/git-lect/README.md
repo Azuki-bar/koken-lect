@@ -120,9 +120,7 @@ git --version
 # もし使えないときは
 echo 'module load git/2.27.0' >> ~/.tcshrc
 exit
-
-mkdir git_lect
-cd git_lect
+ssh X9999999@sol.edu.cc.uec.ac.jp
 
 ```
 
