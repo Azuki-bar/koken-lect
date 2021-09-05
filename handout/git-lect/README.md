@@ -259,10 +259,8 @@ git push
 ![open PullRequest](./src/submit-PR.png)
 ![open PullRequest](./src/submit-PR-2.png)
 
-この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
-
 :warning:
-\[Create pull request]を押すと自分の手元で行なった変更の提案が大元のリポジトリに行なわれます。
+この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
 
 <details>
 <summary>厳密には</summary>
