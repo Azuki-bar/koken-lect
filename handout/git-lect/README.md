@@ -259,8 +259,12 @@ git push
 ![open PullRequest](./src/submit-PR.png)
 ![open PullRequest](./src/submit-PR-2.png)
 
-:warning:
-この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
+> note
+> 
+> :warning:
+> この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
+
+
 
 <details>
 <summary>厳密には</summary>
@@ -280,7 +284,7 @@ Fork はブランチの仕組みを活用したものです。
 レビュー（Review; Revue では無い）をしてもらいます。
 このレビューで問題が発見されなければ master[^1] に変更が反映されます。
 
-[^1:masterはそのまま公開出来るような状態が要求される。最近はmasterが奴隷制度を思わせるという理由でmainが採用されていることもある。意味は同じ。]
+[^1]:masterはそのまま公開出来るような状態が要求される。最近はmasterが奴隷制度を思わせるという理由でmainが採用されていることもある。意味は同じ。
 
 ここまでの開発フローが最近の主流とも言われています。
 
