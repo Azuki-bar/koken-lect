@@ -47,7 +47,7 @@ git commit
 
 #### git push とは
 
-`git push`で`git commit`で保存した履歴をリモートに送れます。
+`git push`を使うと`git commit`で保存した履歴をリモートに送れます。
 
 #### git push のつかいかた
 
@@ -55,7 +55,7 @@ git commit
 git push
 ```
 
-これだけ
+これだけです。
 
 ### git pull
 
