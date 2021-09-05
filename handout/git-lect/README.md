@@ -261,9 +261,8 @@ git push
 
 この\[Create pull request]ボタンを押すと自分の手元で行なった変更が大元のリポジトリに提案されます。
 
-:::note warn
+:warning:
 \[Create pull request]を押すと自分の手元で行なった変更の提案が大元のリポジトリに行なわれます。
-:::
 
 <details>
 <summary>厳密には</summary>
